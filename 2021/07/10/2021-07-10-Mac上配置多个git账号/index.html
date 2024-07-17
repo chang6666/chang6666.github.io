@@ -19,8 +19,8 @@
     <meta name="description" content="1、清空默认全局的username和email（如果没有的话可忽略） 查看已配置的git列表  1git config --list   清空默认的用户名和邮箱  12git config --global --unset user.namegit config --global --unset user.email  2、给不同的git账户生成ssh-key：比方说一个公司账号，一个个人账号 g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac上配置多个git账号">
-<meta property="og:url" content="http://example.com/2021/07/10/2021-07-10-Mac%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgit%E8%B4%A6%E5%8F%B7/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:url" content="https://chang6666.github.io/2021/07/10/2021-07-10-Mac%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgit%E8%B4%A6%E5%8F%B7/index.html">
+<meta property="og:site_name" content="码农十八讲">
 <meta property="og:description" content="1、清空默认全局的username和email（如果没有的话可忽略） 查看已配置的git列表  1git config --list   清空默认的用户名和邮箱  12git config --global --unset user.namegit config --global --unset user.email  2、给不同的git账户生成ssh-key：比方说一个公司账号，一个个人账号 g">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/ChangNingbo/blog_img/main/img202208081606196.png">
@@ -35,7 +35,7 @@
   
   
   
-  <title>Mac上配置多个git账号 - Hexo</title>
+  <title>Mac上配置多个git账号 - 码农十八讲</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -73,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"chang6666.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -308,7 +308,7 @@
 <figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">Generating public/private rsa key pair.<br>Enter file in which to save the key (/Users/james/.ssh/id_rsa):<br>Enter passphrase (empty for no passphrase):<br>Enter same passphrase again:<br>Your identification has been saved in /Users/james/.ssh/id_rsa.<br>Your public key has been saved in /Users/james/.ssh/id_rsa.pub.<br>The key fingerprint is:<br>SHA256:rwtxjGTJPoV9Mg8lFSf8D4X6jFexWVXKOMRaVyo+RO8 13163162001<span class="hljs-meta">@126.com</span><br>The key&#x27;s randomart image is:<br>+---[RSA 3072]----+<br>|<span class="hljs-string">        .o=o+. .*</span>|<br>|<span class="hljs-string">     . + o.=+++o.</span>|<br>|<span class="hljs-string">      * * .==o== </span>|<br>|<span class="hljs-string">     + + *ooo++  </span>|<br>|<span class="hljs-string">      = S .+o+E  </span>|<br>|<span class="hljs-string">       + .. +..  </span>|<br>|<span class="hljs-string">      .   ..     </span>|<br>|<span class="hljs-string">       . .       </span>|<br>|<span class="hljs-string">        o.       </span>|<br>+----[SHA256]-----+<br></code></pre></td></tr></table></figure>
 
 <ul>
-<li>自己的git生成ssh-key，设置路径成<a href="mailto:&#x69;&#100;&#95;&#114;&#115;&#97;&#x5f;&#120;&#x78;&#x78;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;">&#x69;&#100;&#95;&#114;&#115;&#97;&#x5f;&#120;&#x78;&#x78;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a>，和之前生成的那个区分开来</li>
+<li>自己的git生成ssh-key，设置路径成<a href="mailto:&#x69;&#x64;&#x5f;&#x72;&#115;&#97;&#x5f;&#120;&#120;&#x78;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#x69;&#x64;&#x5f;&#x72;&#115;&#97;&#x5f;&#120;&#120;&#x78;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;</a>，和之前生成的那个区分开来</li>
 </ul>
 <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli"><span class="hljs-string">//</span>输入自定义的rsa名字到自己的邮箱上去<br>ssh-keygen -t rsa -f ~<span class="hljs-string">/.ssh/id_rsa_xxx</span>@gmail.com -C <span class="hljs-string">&quot;xxx@gmail.com&quot;</span><br><span class="hljs-string">//</span>后面的一样的<span class="hljs-string">...</span><br></code></pre></td></tr></table></figure>
 
@@ -455,7 +455,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Mac上配置多个git账号</div>
-      <div>http://example.com/2021/07/10/2021-07-10-Mac上配置多个git账号/</div>
+      <div>https://chang6666.github.io/2021/07/10/2021-07-10-Mac上配置多个git账号/</div>
     </div>
     <div class="license-meta">
       
