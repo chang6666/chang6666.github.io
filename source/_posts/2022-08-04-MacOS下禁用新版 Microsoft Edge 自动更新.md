@@ -1,3 +1,22 @@
+---
+title: MacOS下禁用新版 Microsoft Edge 自动更新
+date: 2022-08-07 08:30:53
+categories:
+
+- Mac
+- Edge
+
+tags:
+
+- Mac
+- Edge
+
+---
+
+# MacOS下禁用新版 Microsoft Edge 自动更新
+
+
+
 找到Edge的更新程序：
 
 ```

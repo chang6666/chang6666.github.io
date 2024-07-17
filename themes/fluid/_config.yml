@@ -1002,22 +1002,16 @@ links:
   # Member item of page
   items:
     - {
-      title: "Fluid Blog",
-      intro: "主题博客",
-      link: "https://hexo.fluid-dev.com/",
-      avatar: "/img/favicon.png"
+      title: "LINUX DO",
+      intro: "linux do",
+      link: "https://linux.do/",
+      avatar: "/img/Linux_do.jpg"
     }
     - {
-      title: "Fluid Docs",
-      intro: "主题使用指南",
-      link: "https://hexo.fluid-dev.com/docs/",
-      avatar: "/img/favicon.png"
-    }
-    - {
-      title: "Fluid Repo",
-      intro: "主题 GitHub 仓库",
-      link: "https://github.com/fluid-dev/hexo-theme-fluid",
-      avatar: "/img/favicon.png"
+      title: "GitHub",
+      intro: "github",
+      link: "https://github.com/chang6666",
+      avatar: "/img/github.png"
     }
 
   # 当成员头像加载失败时，替换为指定图片
